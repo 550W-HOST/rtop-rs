@@ -1,9 +1,9 @@
 use ratatui::backend::CrosstermBackend;
 use ratatui::Terminal;
-use rtop_rs::app::{App, AppResult};
-use rtop_rs::event::{Event, EventHandler};
-use rtop_rs::handler::handle_key_events;
-use rtop_rs::tui::Tui;
+use rtop_rust::app::{App, AppResult};
+use rtop_rust::event::{Event, EventHandler};
+use rtop_rust::handler::handle_key_events;
+use rtop_rust::tui::Tui;
 use std::io;
 
 fn main() -> AppResult<()> {
