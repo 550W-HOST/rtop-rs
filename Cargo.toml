@@ -1,0 +1,10 @@
+[package]
+name = "rtop-rs"
+version = "0.1.0"
+authors = ["VisualDust <gavin@gong.host>"]
+license = "MIT"
+edition = "2021"
+
+[dependencies]
+crossterm = "0.27.0"
+ratatui = "0.24.0"
