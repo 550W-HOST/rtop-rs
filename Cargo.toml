@@ -2,6 +2,7 @@
 name = "rtop-rs"
 version = "0.1.0"
 authors = ["VisualDust <gavin@gong.host>", "PuQing <me@puqing.work>"]
+description = "A system monitor written in Rust"
 keywords = ["rust", "top", "system", "monitor"]
 repository = "https://github.com/550W-HOST/rtop-rs"
 readme = "README.md"
