@@ -13,4 +13,7 @@ edition = "2021"
 
 [dependencies]
 crossterm = "0.27.0"
-ratatui = "0.24.0"
+nvml-wrapper = "0.9.0"
+pretty-bytes = "0.2.2"
+psutil = "3.2.2"
+ratatui = "0.25.0"

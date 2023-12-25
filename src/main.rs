@@ -5,6 +5,8 @@ use rtop_rust::event::{Event, EventHandler};
 use rtop_rust::handler::handle_key_events;
 use rtop_rust::tui::Tui;
 use std::io;
+mod nvml;
+mod psutils;
 
 fn main() -> AppResult<()> {
     // Create an application.
