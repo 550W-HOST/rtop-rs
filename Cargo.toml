@@ -1,7 +1,7 @@
 [package]
 name = "rtop-rs"
 version = "0.1.0"
-authors = ["VisualDust <gavin@gong.host>"]
+authors = ["VisualDust <gavin@gong.host>", "PuQing <me@puqing.work>"]
 license = "MIT"
 edition = "2021"
 

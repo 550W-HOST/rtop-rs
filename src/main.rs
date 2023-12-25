@@ -1,10 +1,10 @@
+use ratatui::backend::CrosstermBackend;
+use ratatui::Terminal;
 use rtop_rs::app::{App, AppResult};
 use rtop_rs::event::{Event, EventHandler};
 use rtop_rs::handler::handle_key_events;
 use rtop_rs::tui::Tui;
 use std::io;
-use ratatui::backend::CrosstermBackend;
-use ratatui::Terminal;
 
 fn main() -> AppResult<()> {
     // Create an application.
