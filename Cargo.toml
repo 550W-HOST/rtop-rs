@@ -1,10 +1,11 @@
 [package]
-name = "rtop-rs"
+name = "rtop-rust"
 version = "0.1.0"
 authors = ["VisualDust <gavin@gong.host>", "PuQing <me@puqing.work>"]
 keywords = ["rust", "top", "system", "monitor"]
 repository = "https://github.com/550W-HOST/rtop-rs"
 readme = "README.md"
+description = "A system monitor written in Rust"
 license = "MIT"
 exclude = [".github", "Makefile.toml"]
 autoexamples = true
