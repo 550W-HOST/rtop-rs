@@ -6,7 +6,10 @@ use rtop_rust::handler::handle_key_events;
 use rtop_rust::tui::Tui;
 use std::io;
 
-fn main() -> AppResult<()> {
+use heim::cpu;
+
+#[tokio::main]
+async fn main() -> AppResult<()> {
     // Create an application.
     let mut app = App::new();
 
@@ -16,6 +19,12 @@ fn main() -> AppResult<()> {
     let events = EventHandler::new(250);
     let mut tui = Tui::new(terminal, events);
     tui.init()?;
+    let freq = cpu::frequency()
+        .await
+        .unwrap()
+        .current()
+        .get::<heim::units::frequency::megahertz>();
+    println!("CPU frequency: {} MHz", freq);
 
     // Start the main loop.
     while app.running {

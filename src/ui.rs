@@ -1,35 +1,19 @@
-use ratatui::{
-    layout::Alignment,
-    style::{Color, Style},
-    widgets::{Block, BorderType, Borders, Paragraph},
-    Frame,
-};
+use ratatui::layout::{Constraint, Direction, Layout};
 
-use crate::app::App;
+use crate::widgets::barchart::BarChart;
 
 /// Renders the user interface widgets.
-pub fn render(app: &mut App, frame: &mut Frame) {
+pub fn render(app: &mut crate::app::App, frame: &mut ratatui::Frame) {
     // This is where you add new widgets.
     // See the following resources:
     // - https://docs.rs/ratatui/latest/ratatui/widgets/index.html
     // - https://github.com/ratatui-org/ratatui/tree/master/examples
-    frame.render_widget(
-        Paragraph::new(format!(
-            "This is a tui template.\n\
-                Press `Esc`, `Ctrl-C` or `q` to stop running.\n\
-                Press left and right to increment and decrement the counter respectively.\n\
-                Counter: {}",
-            app.counter
-        ))
-        .block(
-            Block::default()
-                .title("Template")
-                .title_alignment(Alignment::Center)
-                .borders(Borders::ALL)
-                .border_type(BorderType::Rounded),
-        )
-        .style(Style::default().fg(Color::Cyan).bg(Color::Black))
-        .alignment(Alignment::Center),
-        frame.size(),
-    )
+    let main_layout = Layout::default()
+        .direction(Direction::Horizontal)
+        .margin(1)
+        .constraints([Constraint::Percentage(20), Constraint::Percentage(80)].as_ref())
+        .split(frame.size());
+    let data = vec![("B", 10), ("C", 20), ("D", 30), ("E", 40), ("F", 50)];
+    let chart = BarChart::default().data(&data).bar_width(1);
+    frame.render_widget(chart, main_layout[1]);
 }
